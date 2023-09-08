@@ -1,7 +1,9 @@
 import React from "react"
 import { View,Text, SafeAreaView, FlatList, TouchableOpacity,Linking,ActivityIndicator } from "react-native";
-const CustomFlatList=({reactApiResponse,url,offset,})=>
-{return(<FlatList
+
+const CustomFlatList=({reactApiResponse,url,offset,})=>{
+    return(
+    <FlatList
       initialNumToRender={20}
       data={reactApiResponse}
       keyExtractor={(item) => item.question_id}
@@ -22,21 +24,21 @@ const CustomFlatList=({reactApiResponse,url,offset,})=>
           //       console.log(error, '---->er');
           //     });
       // }}
-      renderItem={({item,index})=>
+      renderItem={({item,index})=>{
+        return(
+                <TouchableOpacity onPress={()=>
+                {
+                Linking.openURL(item.link).then(()=>{
+                }).catch(()=>{
+                })
+                }
+                } style={{marginHorizontal:20,marginVertical:10,padding:5,elevation:2,justifyContent:'center'}}>
+                <Text style={{fontSize:16,color:'black'}}>
+                    {index+1}. {item.title}
+                </Text>
+                </TouchableOpacity>
+            )}
+        }
+    />)}
       
-  {return(
-<TouchableOpacity onPress={()=>
-{
-  Linking.openURL(item.link).then(()=>{
-  }).catch(()=>{
-  })
-}
-} style={{marginHorizontal:20,marginVertical:10,padding:5,elevation:2,justifyContent:'center'}}>
-  <Text style={{fontSize:16,color:'black'}}>
-      {index+1}. {item.title}
-  </Text>
-  </TouchableOpacity>
-
-  )}}
-      />)}
-      export default CustomFlatList
+export default CustomFlatList
