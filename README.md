@@ -9,3 +9,7 @@ to get solution for the questions we are just navigating to stackoverflow webpag
 
 Thank you for using the Application.
 
+Sample Demo of Application
+
+https://github.com/sandeepkamble/QuestionsApp/assets/53169002/f283281f-392e-4058-8ddf-ec51f0194fee
+
