@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from "react";
 import CustomFlatList from "../custom_components/CustomFlatList";
 import {View,Text, SafeAreaView, FlatList, TouchableOpacity,Linking,ActivityIndicator  } from "react-native";
-import styles from "../styles/styles";
+import styles from "../styles/CustomStyle";
 const ReactNativeScreen=()=>{
     const [reactApiResponse,setReactApiResponse] = useState([])
     const [showLoader, setShowLoader] = useState(false);

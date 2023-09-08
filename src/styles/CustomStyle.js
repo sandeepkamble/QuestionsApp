@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-const styles = StyleSheet.create({
+const Styles = StyleSheet.create({
    safeAreaStyle:{
      height:'100%',
      width:'100%',
@@ -13,4 +13,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default styles
+export default Styles
