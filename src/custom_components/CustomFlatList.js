@@ -26,16 +26,15 @@ const CustomFlatList=({reactApiResponse,url,offset,})=>{
       // }}
       renderItem={({item,index})=>{
         return(
-                <TouchableOpacity onPress={()=>
-                {
-                Linking.openURL(item.link).then(()=>{
-                }).catch(()=>{
-                })
-                }
-                } style={{marginHorizontal:20,marginVertical:10,padding:5,elevation:2,justifyContent:'center'}}>
-                <Text style={{fontSize:16,color:'black'}}>
-                    {index+1}. {item.title}
-                </Text>
+                <TouchableOpacity onPress={()=>{
+                                    Linking.openURL(item.link)
+                                    .then(()=>{})
+                                    .catch(()=>{})
+                                    }} 
+                                    style={{marginHorizontal:20,marginVertical:10,padding:5,elevation:2,justifyContent:'center'}}>
+                        <Text style={{fontSize:16,color:'black'}}>
+                            {index+1}. {item.title}
+                        </Text>
                 </TouchableOpacity>
             )}
         }

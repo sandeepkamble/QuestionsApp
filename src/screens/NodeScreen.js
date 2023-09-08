@@ -12,8 +12,8 @@ const NodeScreen=()=>{
         .then((response) => response.json())
         .then((responseData) => {
         setShowLoader(false)
-          const { data } = responseData;
-          setReactApiResponse(data);
+          const { items } = responseData;
+          setReactApiResponse(items);
         })
         .catch((error) => {
           setShowLoader(false)

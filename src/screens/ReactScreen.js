@@ -5,15 +5,15 @@ const ReactScreen=()=>{
     const [reactApiResponse,setReactApiResponse] = useState([])
     const [showLoader, setShowLoader] = useState(false);
     const [newUrl,setUrl] = useState("https://api.stackexchange.com/2.3/questions?page=1&pagesize=100&fromdate=1683504000&todate=1694044800&order=asc&sort=activity&tagged=react.js&site=stackoverflow")
+    
     useEffect(()=>{
       setShowLoader(true)
       fetch(newUrl)
         .then((response) => response.json())
         .then((responseData) => {
-            console.log(responseData);
         setShowLoader(false)
-          const { data } = responseData;
-          setReactApiResponse(data);
+          const { items } = responseData;
+          setReactApiResponse(items);
         })
         .catch((error) => {
           setShowLoader(false)
