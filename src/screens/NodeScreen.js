@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from "react";
 import { View,Text, SafeAreaView, FlatList, TouchableOpacity,Linking,ActivityIndicator } from "react-native";
 import CustomFlatList from "../custom_components/CustomFlatList";
+import styles from "../styles/styles";
 const NodeScreen=()=>{
     const [reactApiResponse,setReactApiResponse] = useState([])
     const [showLoader, setShowLoader] = useState(false);
@@ -24,10 +25,10 @@ const NodeScreen=()=>{
 
 return(
         <SafeAreaView>
-          <View style={{height:'100%',width:'100%',backgroundColor:'white',}}>
+          <View style={styles.safeAreaStyle}>
               {showLoader ? (
                 <View
-                  style={{alignItems: 'center', justifyContent: 'center', flex: 0}}>
+                  style={styles.mainViewStyle}>
                   <ActivityIndicator size={30} color='blue' />
                 </View>
               ):<CustomFlatList reactApiResponse={reactApiResponse} url={newUrl}/>}
